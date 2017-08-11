@@ -1,0 +1,6 @@
+framework module iOS_AylaSDK {
+  umbrella header "iOS_AylaSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

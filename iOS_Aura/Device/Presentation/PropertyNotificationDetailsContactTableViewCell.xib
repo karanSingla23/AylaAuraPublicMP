@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PropertyNotificationDetailsContactTableViewCell" customModule="Aura" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Name&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WgW-Ag-wz1">
+                        <rect key="frame" x="8" y="11" width="168" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jf5-zV-7iv" customClass="ContactNotificationButton" customModule="Aura" customModuleProvider="target">
+                        <rect key="frame" x="268" y="0.0" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="lmf-Ad-aNe"/>
+                            <constraint firstAttribute="width" constant="44" id="yR1-MT-cn0"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                        <state key="normal" image="icon-sms"/>
+                        <connections>
+                            <action selector="sms:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tSQ-s9-qF7"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6g-TW-qgJ" customClass="ContactNotificationButton" customModule="Aura" customModuleProvider="target">
+                        <rect key="frame" x="180" y="0.0" width="44" height="44"/>
+                        <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                        <state key="normal" image="icon-push"/>
+                        <connections>
+                            <action selector="push:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2D0-P6-UqK"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECh-gi-nqc" customClass="ContactNotificationButton" customModule="Aura" customModuleProvider="target">
+                        <rect key="frame" x="224" y="0.0" width="44" height="44"/>
+                        <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                        <state key="normal" image="icon-email"/>
+                        <connections>
+                            <action selector="email:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2rI-Eo-as1"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="t6g-TW-qgJ" firstAttribute="centerY" secondItem="ECh-gi-nqc" secondAttribute="centerY" id="Hei-Ih-auF"/>
+                    <constraint firstItem="ECh-gi-nqc" firstAttribute="width" secondItem="Jf5-zV-7iv" secondAttribute="width" id="LPk-b8-Bu3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Jf5-zV-7iv" secondAttribute="trailing" id="Lwm-di-sXp"/>
+                    <constraint firstItem="Jf5-zV-7iv" firstAttribute="leading" secondItem="ECh-gi-nqc" secondAttribute="trailing" id="S05-EE-LVl"/>
+                    <constraint firstItem="WgW-Ag-wz1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="aRQ-sU-szw"/>
+                    <constraint firstItem="Jf5-zV-7iv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="d0L-Oa-Wwr"/>
+                    <constraint firstItem="ECh-gi-nqc" firstAttribute="height" secondItem="Jf5-zV-7iv" secondAttribute="height" id="dKC-cL-VT7"/>
+                    <constraint firstItem="t6g-TW-qgJ" firstAttribute="leading" secondItem="WgW-Ag-wz1" secondAttribute="trailing" constant="4" id="dOM-Vy-1s3"/>
+                    <constraint firstItem="WgW-Ag-wz1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kus-3x-sbA"/>
+                    <constraint firstItem="t6g-TW-qgJ" firstAttribute="width" secondItem="ECh-gi-nqc" secondAttribute="width" id="leG-El-GCJ"/>
+                    <constraint firstItem="t6g-TW-qgJ" firstAttribute="height" secondItem="ECh-gi-nqc" secondAttribute="height" id="lpb-ct-azp"/>
+                    <constraint firstItem="ECh-gi-nqc" firstAttribute="leading" secondItem="t6g-TW-qgJ" secondAttribute="trailing" id="oyy-WY-bdk"/>
+                    <constraint firstItem="ECh-gi-nqc" firstAttribute="centerY" secondItem="Jf5-zV-7iv" secondAttribute="centerY" id="uXi-BL-zCo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="emailButton" destination="ECh-gi-nqc" id="BLE-A4-zB6"/>
+                <outlet property="nameLabel" destination="WgW-Ag-wz1" id="hYK-Cg-F2U"/>
+                <outlet property="pushButton" destination="t6g-TW-qgJ" id="7ta-ac-dgJ"/>
+                <outlet property="smsButton" destination="Jf5-zV-7iv" id="uen-Ia-Jgs"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon-email" width="72" height="72"/>
+        <image name="icon-push" width="72" height="72"/>
+        <image name="icon-sms" width="72" height="72"/>
+    </resources>
+</document>

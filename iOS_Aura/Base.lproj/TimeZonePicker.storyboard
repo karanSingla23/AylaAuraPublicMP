@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Rzo-6M-bPn">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select Time Zone-->
+        <scene sceneID="mvW-nE-Khe">
+            <objects>
+                <viewController id="5eM-13-rVT" customClass="TimeZonePickerViewController" customModule="Aura" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yDF-gg-Oxy"/>
+                        <viewControllerLayoutGuide type="bottom" id="GWJ-5I-4d5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C5Q-Ks-U64">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ATi-c2-Mro">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5eM-13-rVT" id="9nn-ko-JqF"/>
+                                    <outlet property="delegate" destination="5eM-13-rVT" id="UHI-TC-wnD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ATi-c2-Mro" firstAttribute="bottom" secondItem="C5Q-Ks-U64" secondAttribute="bottomMargin" id="2uy-Ef-11G"/>
+                            <constraint firstItem="ATi-c2-Mro" firstAttribute="leading" secondItem="C5Q-Ks-U64" secondAttribute="leading" id="AZd-Rx-5Nh"/>
+                            <constraint firstItem="ATi-c2-Mro" firstAttribute="top" secondItem="C5Q-Ks-U64" secondAttribute="topMargin" id="OSQ-Ul-jo1"/>
+                            <constraint firstAttribute="trailing" secondItem="ATi-c2-Mro" secondAttribute="trailing" id="gld-Tn-Fj3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Time Zone" id="XLL-TY-xpg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvl-5Q-x4F">
+                            <connections>
+                                <action selector="cancel:" destination="5eM-13-rVT" id="ofb-T7-MLo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="WZx-DO-4a8">
+                            <connections>
+                                <action selector="save:" destination="5eM-13-rVT" id="asY-pp-2OC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="ATi-c2-Mro" id="16E-Vi-RI7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXp-yd-N62" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266" y="388"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yaY-M0-lqe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rzo-6M-bPn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B3r-Nb-Iw3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5eM-13-rVT" kind="relationship" relationship="rootViewController" id="CuP-YD-8QP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Dw-hU-a9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="388"/>
+        </scene>
+    </scenes>
+</document>

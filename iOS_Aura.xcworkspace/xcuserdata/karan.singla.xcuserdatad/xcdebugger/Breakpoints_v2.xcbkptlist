@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Aura/AppDelegate.swift"
+            timestampString = "523492337.23903"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
+            landmarkName = "application(_:didReceiveRemoteNotification:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Aura.AppDelegate.application (__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; ()"
+                  moduleName = "Aura"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karan.singla/Documents/AYLA%20NEW/AURA/iOS_Aura_Public/iOS_Aura/AppDelegate.swift"
+                  timestampString = "523492338.775403"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "432"
+                  endingLineNumber = "432"
+                  offsetFromSymbolStart = "464">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Aura.AppDelegate.application (__ObjC.UIApplication, didReceiveRemoteNotification : Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; ()"
+                  moduleName = "Aura"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/karan.singla/Documents/AYLA%20NEW/AURA/iOS_Aura_Public/iOS_Aura/AppDelegate.swift"
+                  timestampString = "523492338.779222"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "432"
+                  endingLineNumber = "432"
+                  offsetFromSymbolStart = "780">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS_Aura/AppDelegate.swift"
+            timestampString = "523492241.964242"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "408"
+            endingLineNumber = "408"
+            landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WFb-d8-Mi6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vu7-iQ-g7I">
+            <objects>
+                <navigationController id="WFb-d8-Mi6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9ls-8i-5Px">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4HB-f2-Lef" kind="relationship" relationship="rootViewController" id="dj5-6l-VGv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DwZ-xt-SxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-338" y="322"/>
+        </scene>
+        <!--Share Device-->
+        <scene sceneID="qMs-CD-aVi">
+            <objects>
+                <viewController title="Share Device" automaticallyAdjustsScrollViewInsets="NO" id="4HB-f2-Lef" customClass="CreateDeviceShareViewController" customModule="Aura" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r1j-z1-3uW"/>
+                        <viewControllerLayoutGuide type="bottom" id="uYP-p0-NO8"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" id="jxB-Sl-D8g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Z3V-3S-9z3">
+                                <rect key="frame" x="10" y="65" width="355" height="1101"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Device" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uDi-sO-Gj8">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="mUg-Yd-PHG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XI-LX-QGm" userLabel="Line Item Stack">
+                                        <rect key="frame" x="0.0" y="56" width="355" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSI-uU-e3i">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="E32-22-UGn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User's Email (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PMz-kF-jyf">
+                                                <rect key="frame" x="100" y="0.0" width="255" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eB6-zg-4Vg">
+                                        <rect key="frame" x="0.0" y="98" width="355" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can share this device with another registered Ayla user." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ok0-9J-HHr">
+                                                <rect key="frame" x="16" y="8" width="323" height="34"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2f3-jl-DFT"/>
+                                            <constraint firstItem="Ok0-9J-HHr" firstAttribute="leading" secondItem="eB6-zg-4Vg" secondAttribute="leading" constant="16" id="BEg-X4-SkC"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ok0-9J-HHr" secondAttribute="bottom" constant="8" id="Kx4-bC-IuB"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ok0-9J-HHr" secondAttribute="trailing" constant="16" id="v68-ND-zYU"/>
+                                            <constraint firstItem="Ok0-9J-HHr" firstAttribute="top" secondItem="eB6-zg-4Vg" secondAttribute="top" constant="8" id="yxf-aR-elh"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFg-ld-HEe" userLabel="Line Item Stack">
+                                        <rect key="frame" x="0.0" y="160" width="355" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0k-BF-IDO">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="L9I-Xp-yOJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="optional" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uys-2G-O0d">
+                                                <rect key="frame" x="100" y="0.0" width="255" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kqF-K7-bG2" userLabel="Line Item Stack">
+                                        <rect key="frame" x="0.0" y="202" width="355" height="64"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capabilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkv-Gt-J1Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="RFm-iX-fSB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="RFm-iX-fSB"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-hV-0GB">
+                                                <rect key="frame" x="0.0" y="36" width="355" height="29"/>
+                                                <segments>
+                                                    <segment title="Read/Write"/>
+                                                    <segment title="Read Only"/>
+                                                    <segment title="None"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-5f-kb8">
+                                        <rect key="frame" x="0.0" y="278" width="355" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="sOV-4M-8wM">
+                                                <rect key="frame" x="16" y="8" width="323" height="69"/>
+                                                <string key="text">Access control for the shared device. Role Name is the full string (i.e. 'OEM::Ayla::EndUser') used for RBAC. Note: Role Name and Operation are mutally exclusive parameters.</string>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="sOV-4M-8wM" firstAttribute="leading" secondItem="Z1u-5f-kb8" secondAttribute="leading" constant="16" id="IKi-yX-Ryg"/>
+                                            <constraint firstAttribute="height" constant="85" id="PUl-jo-lUG"/>
+                                            <constraint firstAttribute="trailing" secondItem="sOV-4M-8wM" secondAttribute="trailing" constant="16" id="RzB-do-f9Q"/>
+                                            <constraint firstItem="sOV-4M-8wM" firstAttribute="top" secondItem="Z1u-5f-kb8" secondAttribute="top" constant="8" id="XC8-Yh-WHZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="sOV-4M-8wM" secondAttribute="bottom" constant="8" id="XqP-PA-BZP"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hN-6t-vCZ" userLabel="Line Item Stack">
+                                        <rect key="frame" x="0.0" y="375" width="355" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt8-NE-SNj">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="JLx-GV-FxO"/>
+                                                    <constraint firstAttribute="width" constant="150" id="Z3O-yH-H6U"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="optional" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Fc0-gi-xwf">
+                                                <rect key="frame" x="150" y="0.0" width="205" height="30"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="QWb-J3-9U1" appends="YES" id="wMi-Kf-yRu"/>
+                                        </connections>
+                                    </stackView>
+                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-Af-oVm">
+                                        <rect key="frame" x="0.0" y="417" width="355" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="484269453.951612">
+                                            <!--2016-05-06 23:17:33 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="startPickerChanged:" destination="4HB-f2-Lef" eventType="valueChanged" id="2Ev-TO-94b"/>
+                                        </connections>
+                                    </datePicker>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jir-Sc-5gR" userLabel="Line Item Stack">
+                                        <rect key="frame" x="0.0" y="645" width="355" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucb-9d-SuG">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="2ts-ax-GcY"/>
+                                                    <constraint firstAttribute="width" constant="150" id="O0o-er-Sif"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="optional" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="77S-gK-r7A">
+                                                <rect key="frame" x="150" y="0.0" width="205" height="30"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="1ui-dp-IlT" appends="YES" id="iXp-rZ-ZQ2"/>
+                                        </connections>
+                                    </stackView>
+                                    <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="C4e-2q-1RQ">
+                                        <rect key="frame" x="0.0" y="687" width="355" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="484269453.951612">
+                                            <!--2016-05-06 23:17:33 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="expiryPickerChanged:" destination="4HB-f2-Lef" eventType="valueChanged" id="VgV-RK-icf"/>
+                                        </connections>
+                                    </datePicker>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4N-53-hE9">
+                                        <rect key="frame" x="0.0" y="915" width="355" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Control when the share becomes active, and when and if it expires. These values are optional." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="UdZ-xe-TK6">
+                                                <rect key="frame" x="16" y="8" width="323" height="54"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="UdZ-xe-TK6" firstAttribute="top" secondItem="o4N-53-hE9" secondAttribute="top" constant="8" id="6Jr-aI-KBW"/>
+                                            <constraint firstAttribute="trailing" secondItem="UdZ-xe-TK6" secondAttribute="trailing" constant="16" id="I7b-gt-ChX"/>
+                                            <constraint firstItem="UdZ-xe-TK6" firstAttribute="leading" secondItem="o4N-53-hE9" secondAttribute="leading" constant="16" id="Kvh-wF-tAF"/>
+                                            <constraint firstAttribute="bottom" secondItem="UdZ-xe-TK6" secondAttribute="bottom" constant="8" id="Rfz-gi-iqL"/>
+                                            <constraint firstAttribute="height" constant="70" id="hFD-Uc-4ah"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gco-aw-mgy" userLabel="SpacerView">
+                                        <rect key="frame" x="0.0" y="997" width="355" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="JXF-k5-nv4"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJB-Dz-Sue" customClass="AuraButton" customModule="Aura" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1019" width="355" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3Dq-NR-7aE"/>
+                                            <constraint firstAttribute="width" constant="200" id="42f-EW-oS8"/>
+                                        </constraints>
+                                        <state key="normal" title="Create Share"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="42f-EW-oS8"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="createButtonPressed:" destination="4HB-f2-Lef" eventType="touchUpInside" id="pV9-IB-55G"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jw-Pr-PPH" userLabel="SpacerView">
+                                        <rect key="frame" x="0.0" y="1076" width="355" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="PK9-cd-ND9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z3V-3S-9z3" firstAttribute="top" secondItem="jxB-Sl-D8g" secondAttribute="topMargin" constant="65" id="0ht-Je-ykQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Z3V-3S-9z3" secondAttribute="bottom" constant="10" id="87a-Eg-9p9"/>
+                            <constraint firstItem="Z3V-3S-9z3" firstAttribute="width" secondItem="jxB-Sl-D8g" secondAttribute="width" constant="-20" id="Lmc-Hn-g8G"/>
+                            <constraint firstItem="Z3V-3S-9z3" firstAttribute="leading" secondItem="jxB-Sl-D8g" secondAttribute="leading" constant="10" id="Shp-XC-HTc"/>
+                            <constraint firstItem="Z3V-3S-9z3" firstAttribute="top" secondItem="r1j-z1-3uW" secondAttribute="bottom" constant="10" id="SwN-Ko-mb2"/>
+                            <constraint firstAttribute="trailing" secondItem="Z3V-3S-9z3" secondAttribute="trailing" constant="10" id="dbr-mp-Ed4"/>
+                            <constraint firstItem="Z3V-3S-9z3" firstAttribute="leading" secondItem="jxB-Sl-D8g" secondAttribute="leading" constant="10" id="m5S-7V-kGQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Z3V-3S-9z3" secondAttribute="bottom" id="mgn-JO-sex"/>
+                            <constraint firstAttribute="trailing" secondItem="Z3V-3S-9z3" secondAttribute="trailing" constant="-10" id="uem-b2-b96"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="87a-Eg-9p9"/>
+                                <exclude reference="Shp-XC-HTc"/>
+                                <exclude reference="SwN-Ko-mb2"/>
+                                <exclude reference="dbr-mp-Ed4"/>
+                            </mask>
+                        </variation>
+                    </scrollView>
+                    <navigationItem key="navigationItem" id="BsJ-ot-ucj"/>
+                    <connections>
+                        <outlet property="capabilitySelector" destination="BoU-hV-0GB" id="nTt-3Y-vlY"/>
+                        <outlet property="createShareButton" destination="IJB-Dz-Sue" id="d5u-aq-Kg8"/>
+                        <outlet property="emailTextField" destination="PMz-kF-jyf" id="hTQ-qT-fVc"/>
+                        <outlet property="expiryDatePicker" destination="C4e-2q-1RQ" id="t5s-Cj-KfK"/>
+                        <outlet property="expiryDateTextField" destination="77S-gK-r7A" id="xPm-8Y-kVb"/>
+                        <outlet property="roleNameTextField" destination="uys-2G-O0d" id="vZt-mX-f3C"/>
+                        <outlet property="startDatePicker" destination="dLm-Af-oVm" id="NMh-Fi-wFh"/>
+                        <outlet property="startDateTextField" destination="Fc0-gi-xwf" id="IJc-b1-RcS"/>
+                        <outlet property="titleLabel" destination="uDi-sO-Gj8" id="815-jx-eNe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4v-pO-PIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QWb-J3-9U1" userLabel="Start Date Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="startDateFieldTapped:" destination="4HB-f2-Lef" id="ISe-5A-Kib"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1ui-dp-IlT" userLabel="Expiry Date Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="expiryDateFieldTapped:" destination="4HB-f2-Lef" id="71e-bC-eSk"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="468" y="322"/>
+        </scene>
+    </scenes>
+</document>

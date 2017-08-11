@@ -1,0 +1,6 @@
+framework module PDKeychainBindingsController {
+  umbrella header "PDKeychainBindingsController-umbrella.h"
+
+  export *
+  module * { export * }
+}

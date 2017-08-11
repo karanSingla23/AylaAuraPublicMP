@@ -1,0 +1,42 @@
+{
+  "name": "iOS_AylaSDK",
+  "version": "5.6.00",
+  "summary": "iOS_AylaSDK.",
+  "homepage": "https://github.com/AylaNetworks/iOS_AylaSDK",
+  "license": {
+    "type": "Commercial",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Company": "Ayla Networks"
+  },
+  "source": {
+    "git": "https://github.com/AylaNetworks/iOS_AylaSDK.git",
+    "tag": "5.6.00"
+  },
+  "platforms": {
+    "ios": "8.4"
+  },
+  "public_header_files": "iOS_AylaSDK/{,Auth/,Change/,Connection/,Error/,Log/,Param/,Setup/,OTA/,LocalDevice/}*.h",
+  "source_files": "iOS_AylaSDK/**/*.{h,m}",
+  "frameworks": "Security",
+  "requires_arc": true,
+  "dependencies": {
+    "AFNetworking": [
+      "~> 3.0"
+    ],
+    "CocoaAsyncSocket": [
+      "~> 7.4"
+    ],
+    "CocoaHTTPServer": [
+      "~> 2.3"
+    ],
+    "SocketRocket": [
+      "~> 0.4"
+    ],
+    "QNNetDiag": [
+
+    ]
+  },
+  "libraries": "z"
+}

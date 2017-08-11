@@ -1,0 +1,119 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CocoaAsyncSocket (7.6.1)
+  - CocoaHTTPServer (2.3):
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+  - CocoaLumberjack (3.2.0):
+    - CocoaLumberjack/Default (= 3.2.0)
+    - CocoaLumberjack/Extensions (= 3.2.0)
+  - CocoaLumberjack/Default (3.2.0)
+  - CocoaLumberjack/Extensions (3.2.0):
+    - CocoaLumberjack/Default
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.6.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
+  - Google/Core (3.1.0):
+    - FirebaseAnalytics (~> 3.2)
+  - Google/SignIn (3.1.0):
+    - Google/Core
+    - GoogleSignIn (~> 4.0)
+  - GoogleSignIn (4.0.2):
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMOAuth2 (1.1.4):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.11):
+    - GTMSessionFetcher/Full (= 1.1.11)
+  - GTMSessionFetcher/Core (1.1.11)
+  - GTMSessionFetcher/Full (1.1.11):
+    - GTMSessionFetcher/Core (= 1.1.11)
+  - iOS_AylaSDK (5.6.00):
+    - AFNetworking (~> 3.0)
+    - CocoaAsyncSocket (~> 7.4)
+    - CocoaHTTPServer (~> 2.3)
+    - QNNetDiag
+    - SocketRocket (~> 0.4)
+  - MBProgressHUD (1.0.0)
+  - PDKeychainBindingsController (0.0.1)
+  - QNNetDiag (0.0.4)
+  - SAMKeychain (1.5.2)
+  - SideMenuController (0.2.4)
+  - SocketRocket (0.5.1)
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0
+  - Google/SignIn
+  - iOS_AylaSDK (from `https://github.com/AylaNetworks/iOS_AylaSDK_Public.git`, branch `release/5.6.00`)
+  - MBProgressHUD
+  - PDKeychainBindingsController
+  - SAMKeychain
+  - SideMenuController
+
+EXTERNAL SOURCES:
+  iOS_AylaSDK:
+    :branch: release/5.6.00
+    :git: https://github.com/AylaNetworks/iOS_AylaSDK_Public.git
+
+CHECKOUT OPTIONS:
+  iOS_AylaSDK:
+    :commit: c7470ff7410f939a32994b5872c304321a8c398e
+    :git: https://github.com/AylaNetworks/iOS_AylaSDK_Public.git
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CocoaAsyncSocket: 7eadd3f59e1a6c84e2aefc93e9ff7b55156fe174
+  CocoaHTTPServer: 5624681fc3473d43b18202f635f9b3abb013b530
+  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
+  GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
+  GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
+  iOS_AylaSDK: efc1b05bfa90b2fdefb944914528ebea337aa5e9
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  PDKeychainBindingsController: fa8cb3cf99f2ea9240d61066ed0549f34e2cec3c
+  QNNetDiag: f38e43c4f89aef14c1cc6b474a41e07bbe8b2820
+  SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
+  SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+
+PODFILE CHECKSUM: 8897887d703c1aa9e70f18edc90339ac03364974
+
+COCOAPODS: 1.0.1
