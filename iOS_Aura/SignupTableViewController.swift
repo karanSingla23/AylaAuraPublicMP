@@ -25,23 +25,23 @@ class SignupTableViewController: UITableViewController {
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var devKitNumTextField: UITextField!
     @IBOutlet weak var signupButton: AuraButton!
-
+    
     var tokenTextField: UITextField?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func cancelAction(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -88,8 +88,11 @@ class SignupTableViewController: UITableViewController {
             user.devKitNum = devKitNumber as NSNumber?
         }
         
-        let emailTemplate = AylaEmailTemplate(id: "com.template.signUp", subject: "Aura Signup", bodyHTML: nil)
+        let lang = Locale.preferredLanguages[0]
         
+        // Case : Get the Current Language and set Template ID Accordingly (i.e Hindi or English)
+        let tempID = (lang == "hi-US") ? "com.temp.hindi" : "com.temp.eng"
+        let emailTemplate = AylaEmailTemplate(id: tempID, subject: "Aura Signup", bodyHTML: nil)
         signupButton.isEnabled = false
         signupButton.alpha = 0.6
         let loginManager = AylaNetworks.shared().loginManager
@@ -130,8 +133,8 @@ class SignupTableViewController: UITableViewController {
                         parentController!.present(alert, animated: true, completion: nil)
                     }
                 })
-                }, failure: { (error) -> Void in
-                    UIAlertController.alert("Error", message: error.aylaServiceDescription, buttonTitle: "OK", fromController: self)
+            }, failure: { (error) -> Void in
+                UIAlertController.alert("Error", message: error.aylaServiceDescription, buttonTitle: "OK", fromController: self)
             })
         }
         

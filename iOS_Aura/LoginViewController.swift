@@ -13,25 +13,25 @@ import MBProgressHUD
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l < r
+    case (nil, _?):
+        return true
+    default:
+        return false
+    }
 }
 
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l > r
+    default:
+        return rhs < lhs
+    }
 }
 
 
@@ -94,33 +94,33 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func googleLoginPressed(sender: AnyObject) {
-//        presentLoading("Sign in with Google...")
+        //        presentLoading("Sign in with Google...")
         GIDSignIn.sharedInstance().signOut()
         GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func wechatLoginPressed(_ sender: Any) {
         #if INCLUDE_WECHAT_OAUTH
-        if WXApi.isWXAppInstalled() {
-            let authReq = SendAuthReq()
-            authReq.scope = "snsapi_userinfo"
-            authReq.state = "Aura"
-            WXApi.send(authReq)
-        } else {
-            UIAlertController.alert(nil, message: "Wechat App must be installed for Wechat sign in.", buttonTitle: "OK", fromController: self)
-        }
+            if WXApi.isWXAppInstalled() {
+                let authReq = SendAuthReq()
+                authReq.scope = "snsapi_userinfo"
+                authReq.state = "Aura"
+                WXApi.send(authReq)
+            } else {
+                UIAlertController.alert(nil, message: "Wechat App must be installed for Wechat sign in.", buttonTitle: "OK", fromController: self)
+            }
         #endif
     }
     
     func onWechatOAuthResponse(_ notification: NSNotification) {
         #if INCLUDE_WECHAT_OAUTH
-        if let resp = notification.userInfo?["auth_resp"] as? SendAuthResp {
-            if resp.errCode == 0 { // success
-                startOAuth(with: resp.code, authType: .wechat)
-            } else {
-                print("Error:\(resp.errStr)")
+            if let resp = notification.userInfo?["auth_resp"] as? SendAuthResp {
+                if resp.errCode == 0 { // success
+                    startOAuth(with: resp.code, authType: .wechat)
+                } else {
+                    print("Error:\(resp.errStr)")
+                }
             }
-        }
         #else
             AylaLogE(tag: self.logTag, flag: 0, message:"Error : WeChat OAuth accessed when not included")
         #endif
@@ -142,9 +142,9 @@ class LoginViewController: UIViewController {
             loginManager.login(with: authProvider, sessionName: AuraSessionOneName, success: { [unowned self](_, sessionManager) -> Void in
                 MBProgressHUD.hide(for: self.view, animated: true)
                 self.performSegue(withIdentifier: self.segueIdToMain, sender: sessionManager)
-            }, failure: { [unowned self] (error) -> Void in
-                MBProgressHUD.hide(for: self.view, animated: true)
-                self.presentError(error)
+                }, failure: { [unowned self] (error) -> Void in
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.presentError(error)
             })
         }
     }
@@ -205,15 +205,15 @@ class LoginViewController: UIViewController {
                     // Once succeeded, present view controller in `Main` storyboard.
                     self.performSegue(withIdentifier: self.segueIdToMain, sender: sessionManager)
                 })
-
+                
             }
             
             // Login with login manager
             self.presentLoading("Login...")
             let loginManager = AylaNetworks.shared().loginManager
             loginManager.login(with: auth, sessionName: AuraSessionOneName, success: success, failure: { [unowned loginManager] (error) -> Void in
-                    if settings.allowOfflineUse {
-                        do {
+                if settings.allowOfflineUse {
+                    do {
                         if let cachedAuth = try SAMKeychain.objectForService("LANLoginAuthorization", account: username) as? AylaAuthorization {
                             let provider = AylaCachedAuthProvider(authorization: cachedAuth)
                             loginManager.login(with: provider, sessionName: AuraSessionOneName, success: success, failure: { (error) in
@@ -223,13 +223,13 @@ class LoginViewController: UIViewController {
                             })
                             return;
                         }
-                        } catch _ {
-                            AylaLogE(tag: self.logTag, flag: 0, message:"Failed to get cached authorization")
-                        }
+                    } catch _ {
+                        AylaLogE(tag: self.logTag, flag: 0, message:"Failed to get cached authorization")
                     }
-                    self.dismissLoading(false, completion: { () -> Void in
-                        self.presentError(error as NSError)
-                    })
+                }
+                self.dismissLoading(false, completion: { () -> Void in
+                    self.presentError(error as NSError)
+                })
             })
         }
     }
@@ -246,15 +246,20 @@ class LoginViewController: UIViewController {
             // Login with login manager
             self.presentLoading("Resending confirmation...")
             let loginManager = AylaNetworks.shared().loginManager
-            let template = AylaEmailTemplate(id: "com.template.signUp", subject: "Confirm your email", bodyHTML: nil)
+            
+            // Case : Get The Current Language and set Template ID Accordingly (i.e Hindi or English)
+            let lang = Locale.preferredLanguages[0]
+            let tempID = (lang == "hi-US") ? "com.temp.hindi" : "com.temp.eng"
+            let template = AylaEmailTemplate(id: tempID, subject: "Confirm your email", bodyHTML: nil)
+            // Case : End
             loginManager.resendConfirmationEmail(usernameTextField.text!, emailTemplate: template, success: {
                 self.dismissLoading(false, completion: { () -> Void in
                     UIAlertController.alert("Confirmation resent", message: "Please check your inbox", buttonTitle: "OK", fromController: self)
                 })
-                }, failure: { (error) in
-                    self.dismissLoading(false, completion: { () -> Void in
-                        self.presentError(error)
-                    })
+            }, failure: { (error) in
+                self.dismissLoading(false, completion: { () -> Void in
+                    self.presentError(error)
+                })
             })
         }
     }
@@ -275,15 +280,19 @@ class LoginViewController: UIViewController {
             // Login with login manager
             self.presentLoading("Resetting password...")
             let loginManager = AylaNetworks.shared().loginManager
-            let template = AylaEmailTemplate(id: "com.template.signUp", subject: "Password Reset Request", bodyHTML: nil)
+            // Case : Get The Current Language and set Template ID Accordingly (i.e Hindi or English)
+            let lang = Locale.preferredLanguages[0]
+            let tempID = (lang == "hi-US") ? "com.temp.hindi" : "com.temp.eng"
+            let template = AylaEmailTemplate(id: tempID, subject: "Password Reset Request", bodyHTML: nil)
+            // End
             loginManager.requestPasswordReset(usernameTextField.text!, emailTemplate: template, success: {
                 self.dismissLoading(false, completion: { () -> Void in
                     UIAlertController.alert("Password reset requested", message: "Please check your email for instructions on how to reset your password.", buttonTitle: "OK", fromController: self)
                 })
-                }, failure: { (error) in
-                    self.dismissLoading(false, completion: { () -> Void in
-                        self.presentError(error)
-                    })
+            }, failure: { (error) in
+                self.dismissLoading(false, completion: { () -> Void in
+                    self.presentError(error)
+                })
             })
         }
     }
